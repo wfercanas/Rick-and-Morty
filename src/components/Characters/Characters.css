@@ -4,21 +4,30 @@
   justify-content: center;
   flex-flow: wrap;
   gap: 2rem;
-  background-color: #22262d;
+  background-color: var(--white);
+}
+
+.Characters.dark {
+  background-color: var(--darkgray);
 }
 
 .Character {
   display: grid;
   grid-template-columns: 250px 400px;
-  background-color: #3c3e44;
-  color: whitesmoke;
+  background-color: var(--darkgray);
+  color: var(--white);
   border-radius: 1rem;
   overflow: hidden;
 }
 
+.Character.dark {
+  background-color: var(--lightgray);
+  color: var(--black);
+}
+
 .Character__image {
   background-position: center;
-  background-size: cover;
+  background-size: cover; 
   background-repeat: no-repeat;
   width: 100%;
   height: auto;

@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext';
 import './Characters.css';
 
 const Characters = () => {
+  const [darkmode] = useContext(ThemeContext);
   const [characters, setCharecters] = useState([]);
+
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character')
       .then((response) => response.json())
@@ -10,10 +13,13 @@ const Characters = () => {
   }, []);
 
   return (
-    <div className="Characters">
+    <div className={darkmode ? 'Characters dark' : 'Characters'}>
       {characters.map((character) => {
         return (
-          <div className="Character" key={character.id}>
+          <div
+            className={darkmode ? 'Character dark' : 'Character'}
+            key={character.id}
+          >
             <div
               className="Character__image"
               style={{ backgroundImage: `url(${character.image})` }}
