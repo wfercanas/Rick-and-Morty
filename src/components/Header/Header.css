@@ -1,0 +1,27 @@
+.Header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightgrey;
+  color: darkslategray;
+}
+
+.Header.dark {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.Button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: darkslategray;
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: none;
+}
+
+.Button.dark {
+  background-color: whitesmoke;
+  color: darkslategray;
+}

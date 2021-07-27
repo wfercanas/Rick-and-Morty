@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Header.css';
 
 const Header = () => {
   const [darkmode, setDarkMode] = useState(false);
@@ -8,10 +9,14 @@ const Header = () => {
   };
 
   return (
-    <div className="Header">
-      <h1>React Hooks</h1>
-      <button type="button" onClick={handleClick}>
-        {darkmode ? 'Dark Mode' : 'Light Mode'}
+    <div className={darkmode ? 'Header dark' : 'Header light'}>
+      <h1>Rick and Morty API</h1>
+      <button
+        type="button"
+        onClick={handleClick}
+        className={darkmode ? 'Button dark' : 'Button light'}
+      >
+        {darkmode ? 'Light Mode' : 'Dark Mode'}
       </button>
     </div>
   );
