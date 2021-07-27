@@ -1,0 +1,48 @@
+.Characters {
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 2rem;
+  background-color: #22262d;
+}
+
+.Character {
+  display: grid;
+  grid-template-columns: 250px 400px;
+  background-color: #3c3e44;
+  color: whitesmoke;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.Character__image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+}
+
+.Character__data {
+  text-align: left;
+  padding: 1rem;
+}
+
+.Character__data--name {
+  margin: 0;
+}
+
+.Character__data--meta {
+  margin: 0;
+  padding: 0;
+}
+
+.Character__data--subtitle {
+  color: #9e9e9e;
+  margin: 1rem 0 0;
+}
+
+.Character__data--value {
+  margin: 0;
+}
