@@ -1,3 +1,16 @@
+.Title {
+  background-color: var(--white);
+  margin: 0;
+  padding: 2rem 5% 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.Title.dark {
+  background-color: var(--darkgray);
+  color: var(--orange);
+}
+
 .Characters {
   padding: 1rem 5%;
   display: flex;
@@ -27,18 +40,20 @@
 
 .Character__image {
   background-position: center;
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: auto;
 }
 
 .Character__data {
+  position: relative;
   text-align: left;
   padding: 1rem;
 }
 
 .Character__data--name {
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -54,4 +69,14 @@
 
 .Character__data--value {
   margin: 0;
+}
+
+.Character__favButton {
+  position: absolute;
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
 }

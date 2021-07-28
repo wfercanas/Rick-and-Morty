@@ -7,7 +7,7 @@ const Characters = ({ characters, handleClick }) => {
 
   return (
     <>
-      <h2>List of characters</h2>
+      <h2 className={darkmode ? 'Title dark' : 'Title'}>List of characters</h2>
       <section className={darkmode ? 'Characters dark' : 'Characters'}>
         {characters.map((character) => {
           return (
@@ -20,7 +20,7 @@ const Characters = ({ characters, handleClick }) => {
                 style={{ backgroundImage: `url(${character.image})` }}
               />
               <div className="Character__data">
-                <h2 className="Character__data--name">{character.name}</h2>
+                <h3 className="Character__data--name">{character.name}</h3>
                 <p className="Character__data--meta">
                   {character.status} - {character.species}
                 </p>
@@ -34,12 +34,12 @@ const Characters = ({ characters, handleClick }) => {
                 <p className="Character__data--value">
                   {character.origin.name}
                 </p>
-                <i
+                <button
                   className="Character__favButton"
                   onClick={() => handleClick(character)}
                 >
                   🤍
-                </i>
+                </button>
               </div>
             </article>
           );
