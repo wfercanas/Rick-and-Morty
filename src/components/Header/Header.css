@@ -6,6 +6,7 @@
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
+  text-align: center;
   background-color: var(--lightgray);
   color: var(--black);
 }
@@ -31,4 +32,10 @@
 .Button.dark {
   background-color: var(--white);
   color: var(--black);
+}
+
+@media only screen and (max-width: 600px) {
+  .Header {
+    font-size: 2rem;
+  }
 }
