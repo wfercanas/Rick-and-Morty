@@ -21,6 +21,13 @@ const favoriteReducer = (state, action) => {
         };
       }
       return state;
+    case 'REMOVE_FROM_FAVORITES':
+      return {
+        ...state,
+        favoriteCharacters: state.favoriteCharacters.filter(
+          (favorite) => favorite.id !== action.payload.id
+        ),
+      };
     default:
       return state;
   }
@@ -37,7 +44,17 @@ const CharactersContainer = () => {
   }, []);
 
   const handleClick = (favoriteCharacter) => {
-    dispatch({ type: 'ADD_TO_FAVORITES', payload: favoriteCharacter });
+    if (
+      !state.favoriteCharacters.some(
+        (favorite) => favorite.id === favoriteCharacter.id
+      )
+    ) {
+      console.log('add');
+      dispatch({ type: 'ADD_TO_FAVORITES', payload: favoriteCharacter });
+    } else {
+      console.log('remove');
+      dispatch({ type: 'REMOVE_FROM_FAVORITES', payload: favoriteCharacter });
+    }
   };
 
   return (
