@@ -1,8 +1,8 @@
 .Title {
   background-color: var(--white);
+  color: var(--darkgray);
   margin: 0;
   padding: 2rem 5% 1rem;
-  font-weight: normal;
   text-transform: uppercase;
 }
 
