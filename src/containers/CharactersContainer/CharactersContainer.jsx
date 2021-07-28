@@ -49,10 +49,8 @@ const CharactersContainer = () => {
         (favorite) => favorite.id === favoriteCharacter.id
       )
     ) {
-      console.log('add');
       dispatch({ type: 'ADD_TO_FAVORITES', payload: favoriteCharacter });
     } else {
-      console.log('remove');
       dispatch({ type: 'REMOVE_FROM_FAVORITES', payload: favoriteCharacter });
     }
   };
