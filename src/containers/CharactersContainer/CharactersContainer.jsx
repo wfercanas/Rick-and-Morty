@@ -10,10 +10,17 @@ const initialState = {
 const favoriteReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TO_FAVORITES':
-      return {
-        ...state,
-        favoriteCharacters: [...state.favoriteCharacters, action.payload],
-      };
+      if (
+        !state.favoriteCharacters.some(
+          (favorite) => favorite.id === action.payload.id
+        )
+      ) {
+        return {
+          ...state,
+          favoriteCharacters: [...state.favoriteCharacters, action.payload],
+        };
+      }
+      return state;
     default:
       return state;
   }
