@@ -1,0 +1,20 @@
+.Favorites {
+  margin: 0;
+  padding: 0 5%;
+  list-style: none;
+  display: flex;
+}
+
+.Favorites.dark {
+  background-color: var(--darkgray);
+}
+
+.Favorites__avatar {
+  margin: 0 0.5rem;
+}
+
+.Favorites__avatar--image {
+  width: 6rem;
+  height: auto;
+  border-radius: 50%;
+}
