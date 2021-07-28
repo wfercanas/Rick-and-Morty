@@ -24,7 +24,7 @@ const CharactersContainer = () => {
   const [state, dispatch] = useReducer(favoriteReducer, initialState);
 
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
+    fetch('https://rickandmortyapi.com/api/character', { crossDomain: true })
       .then((response) => response.json())
       .then((data) => setCharacters(data.results));
   }, []);
