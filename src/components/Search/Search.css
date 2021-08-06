@@ -16,6 +16,10 @@
   border-radius: 0.3rem;
 }
 
+.SearchInput:focus {
+  outline: none;
+}
+
 .SearchInput.dark {
   background-color: var(--lightgray);
 }
