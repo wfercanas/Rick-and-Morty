@@ -1,48 +1,18 @@
-import React, { useState, useEffect, useReducer } from 'react';
-
+import React, { useState, useEffect, useReducer, useMemo } from 'react';
+import { initialCharacters } from '../../utils/initialCharacters';
+import { favoritesReducer } from '../../utils/favoritesReducer';
 import { FavoriteCharacters } from '../../components/FavoriteCharacters/FavoriteCharacters';
 import { Characters } from '../../components/Characters/Characters';
 
-const initialState = {
-  favoriteCharacters: [],
-};
-
-const favoriteReducer = (state, action) => {
-  switch (action.type) {
-    case 'ADD_TO_FAVORITES':
-      if (
-        !state.favoriteCharacters.some(
-          (favorite) => favorite.id === action.payload.id
-        )
-      ) {
-        return {
-          ...state,
-          favoriteCharacters: [...state.favoriteCharacters, action.payload],
-        };
-      }
-      return state;
-    case 'REMOVE_FROM_FAVORITES':
-      return {
-        ...state,
-        favoriteCharacters: state.favoriteCharacters.filter(
-          (favorite) => favorite.id !== action.payload.id
-        ),
-      };
-    default:
-      return state;
-  }
-};
-
 const CharactersContainer = () => {
   const [characters, setCharacters] = useState([]);
-  const [state, dispatch] = useReducer(favoriteReducer, initialState);
-
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character', { crossDomain: true })
+    fetch('https://rickandmortyapi.com/api/character')
       .then((response) => response.json())
       .then((data) => setCharacters(data.results));
   }, []);
 
+  const [state, dispatch] = useReducer(favoritesReducer, initialCharacters);
   const handleClick = (favoriteCharacter) => {
     if (
       !state.favoriteCharacters.some(
@@ -55,10 +25,30 @@ const CharactersContainer = () => {
     }
   };
 
+  const [search, setSearch] = useState('');
+  const handleSearch = ({ target }) => {
+    setSearch(target.value);
+  };
+
+  const filteredCharacters = () => {
+    if (search) {
+      return characters.filter((character) =>
+        character.name.toLowerCase().includes(search.toLowerCase())
+      );
+    } else {
+      return characters;
+    }
+  };
+
   return (
     <>
       <FavoriteCharacters favorites={state.favoriteCharacters} />
-      <Characters characters={characters} handleClick={handleClick} />
+      <Characters
+        characters={filteredCharacters()}
+        handleClick={handleClick}
+        handleSearch={handleSearch}
+        search={search}
+      />
     </>
   );
 };
