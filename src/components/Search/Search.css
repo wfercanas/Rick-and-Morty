@@ -1,0 +1,21 @@
+.Search {
+  background-color: var(--white);
+  color: var(--darkgray);
+  margin: 0;
+  padding: 0 5%;
+}
+
+.Search.dark {
+  background-color: var(--darkgray);
+}
+
+.SearchInput {
+  width: 15rem;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--black);
+  border-radius: 0.3rem;
+}
+
+.SearchInput.dark {
+  background-color: var(--lightgray);
+}
