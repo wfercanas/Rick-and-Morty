@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useReducer, useMemo } from 'react';
+import React, { useState, useReducer, useMemo } from 'react';
 import { initialCharacters } from '../../utils/initialCharacters';
 import { favoritesReducer } from '../../utils/favoritesReducer';
 import { FavoriteCharacters } from '../../components/FavoriteCharacters/FavoriteCharacters';
 import { Characters } from '../../components/Characters/Characters';
+import { useCharacters } from '../../hooks/useCharacters';
 
 const CharactersContainer = () => {
-  const [characters, setCharacters] = useState([]);
-  useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then((response) => response.json())
-      .then((data) => setCharacters(data.results));
-  }, []);
+  const API = 'https://rickandmortyapi.com/api/character';
+  const characters = useCharacters(API);
 
   const [state, dispatch] = useReducer(favoritesReducer, initialCharacters);
   const handleClick = (favoriteCharacter) => {
