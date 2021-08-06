@@ -30,7 +30,7 @@ const CharactersContainer = () => {
     setSearch(target.value);
   };
 
-  const filteredCharacters = () => {
+  const filteredCharacters = useMemo(() => {
     if (search) {
       return characters.filter((character) =>
         character.name.toLowerCase().includes(search.toLowerCase())
@@ -38,13 +38,13 @@ const CharactersContainer = () => {
     } else {
       return characters;
     }
-  };
+  }, [characters, search]);
 
   return (
     <>
       <FavoriteCharacters favorites={state.favoriteCharacters} />
       <Characters
-        characters={filteredCharacters()}
+        characters={filteredCharacters}
         handleClick={handleClick}
         handleSearch={handleSearch}
         search={search}
