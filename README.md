@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Hooks with Rick and Morty
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Difficulty: 🟣 Easy
 
-## Available Scripts
+## Project URL
+🚀 You can check the project working in the following link: 
 
-In the project directory, you can run:
+## Project Description
+This app lets you see some basic data about the main characters of Rick and Morty. When displayed, you can add them to favorites or remove them.
+If you want to, you can toggle the site between light and dark theme.
 
-### `npm start`
+## Installation
+In order to make a local installation, you should execute:
+```bash
+npm install
+npm run start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
+React (Hooks).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Special Challenges
+1. Create a context to provide the theme the app must use. Then, when each component makes use of the context provided, has to define its style to adapt depending if it the theme is set to light or dark.
+2. Fetch the characters data using an effect. If something goes wrong, the app must be able to render a fallback UI.
+3. When filtering characters, some filters may have been calculated prior, especially when you are typing. Use memoization to reduce the number of times the filter executes.
+4. Create a custom hook that fetches the API and return the set of characters. This instead of creating everytime a state and then appliying and effect to control this part of the app.
+5. Control the adding or removing of favorite characters with a Reducer.
 
-### `npm test`
+## Key Concepts
+1. Hooks: useState(), useEffect(), useReducer(), useMemo(), useContext(), useCharacters() -this is a custom hook-
+2. Error boundaries.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+Thanks to Óscar Barajas (@gndx)[https://twitter.com/gndx] for explaining this concepts within the React Hooks Professional Course in Platzi.💚
