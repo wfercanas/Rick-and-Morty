@@ -5,7 +5,10 @@ const useCharacters = (url) => {
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setCharacters(data.results));
+      .then((data) => setCharacters(data.results))
+      .catch((error) => {
+        throw new Error(`Couldn't get the data:${error}`);
+      });
   }, [url]);
   return characters;
 };
