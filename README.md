@@ -4,7 +4,7 @@
 
 ## Project URL
 
-🚀 You can check the project working in the following link:
+🚀 You can check the project working in the following link: https://wfercanas.github.io/Rick-and-Morty/
 
 ## Project Description
 
