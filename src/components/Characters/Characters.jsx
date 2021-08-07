@@ -13,7 +13,13 @@ const Characters = ({ characters, handleClick, handleSearch, search }) => {
       <Search handleSearch={handleSearch} search={search} />
       <section className={darkmode ? 'Characters dark' : 'Characters'}>
         {characters.map((character) => {
-          return <Character character={character} handleClick={handleClick} />;
+          return (
+            <Character
+              key={character.id}
+              character={character}
+              handleClick={handleClick}
+            />
+          );
         })}
       </section>
     </>
