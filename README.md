@@ -39,4 +39,4 @@ React (Hooks).
 
 ## Acknowledgements
 
-Thanks to Óscar Barajas [@gndx](https://twitter.com/gndx) for explaining this concepts within the React Hooks Professional Course in Platzi.💚
+Thanks to Óscar Barajas ([@gndx](https://twitter.com/gndx)) for explaining this concepts within the React Hooks Professional Course in Platzi.💚
