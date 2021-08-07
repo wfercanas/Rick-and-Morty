@@ -1,4 +1,5 @@
 import React from 'react';
+import { ErrorHandling } from './components/ErrorHandling/ErrorHandling';
 
 import Header from './components/Header/Header';
 import { CharactersContainer } from './containers/CharactersContainer/CharactersContainer';
@@ -6,8 +7,10 @@ import { CharactersContainer } from './containers/CharactersContainer/Characters
 function App() {
   return (
     <div className="App">
-      <Header />
-      <CharactersContainer />
+      <ErrorHandling>
+        <Header />
+        <CharactersContainer />
+      </ErrorHandling>
     </div>
   );
 }
